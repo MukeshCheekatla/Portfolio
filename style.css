@@ -1,51 +1,58 @@
-/* styles.css */
 body {
-    font-family: 'Arial', sans-serif;
-    color: #333;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 section {
     padding: 60px 0;
+    animation: fadeIn 1s ease-in-out;
 }
 
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #444;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-ul li {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
-
-.card {
+/* Hover effect for buttons */
+.btn-primary {
+    background-color: #007bff;
     border: none;
+    transition: all 0.3s ease-in-out;
 }
 
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
+/* Card hover effect */
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* Text animations */
+h1, h2, h3, h4 {
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+h1:hover, h2:hover, h3:hover {
+    color: #007bff;
+}
+
+/* Footer styling */
 footer {
-    background-color: #222;
-    color: #fff;
+    background-color: #343a40;
     padding: 20px;
-}
-
-footer i {
-    color: #fff;
-    font-size: 1.5rem;
-    margin: 0 15px;
-    transition: color 0.3s ease;
-}
-
-footer i:hover {
-    color: #1d72b8;
+    color: white;
 }
