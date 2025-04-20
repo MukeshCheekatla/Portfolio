@@ -5,6 +5,7 @@ body {
   padding: 0;
   background-color: #f4f4f9;
   color: #333;
+  line-height: 1.6;
 }
 
 header {
@@ -17,6 +18,7 @@ header {
 header h1 {
   margin: 0;
   font-size: 36px;
+  font-weight: bold;
 }
 
 header p {
@@ -24,12 +26,13 @@ header p {
   font-size: 18px;
 }
 
-a {
+header a {
   color: #3498db;
   text-decoration: none;
+  font-weight: bold;
 }
 
-a:hover {
+header a:hover {
   text-decoration: underline;
 }
 
@@ -39,12 +42,21 @@ section {
   max-width: 900px;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 section h2 {
   text-align: center;
   color: #2c3e50;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 ul {
@@ -54,6 +66,11 @@ ul {
 
 ul li {
   margin-bottom: 10px;
+  font-size: 16px;
+}
+
+ul li strong {
+  font-weight: bold;
 }
 
 .project {
@@ -64,14 +81,24 @@ footer {
   background-color: #2c3e50;
   color: white;
   text-align: center;
-  padding: 10px;
-  position: fixed;
+  padding: 20px;
+  position: relative;
   width: 100%;
   bottom: 0;
 }
 
 footer p {
   margin: 0;
+  font-size: 16px;
+}
+
+a.footer-link {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a.footer-link:hover {
+  text-decoration: underline;
 }
 
 #backToTopBtn {
@@ -86,8 +113,30 @@ footer p {
   border-radius: 5px;
   cursor: pointer;
   display: none;
+  transition: background-color 0.3s ease;
 }
 
 #backToTopBtn:hover {
   background-color: #2980b9;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  section {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+
+  #backToTopBtn {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
 }
