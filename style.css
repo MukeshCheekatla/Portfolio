@@ -1,142 +1,41 @@
-/* Global styles */
+/* styles.css */
 body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f9;
-  color: #333;
-  line-height: 1.6;
-}
-
-header {
-  background-color: #2c3e50;
-  color: white;
-  padding: 30px;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 36px;
-  font-weight: bold;
-}
-
-header p {
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-header a {
-  color: #3498db;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-header a:hover {
-  text-decoration: underline;
+    font-family: Arial, sans-serif;
 }
 
 section {
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 900px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 60px 0;
 }
 
-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-section h2 {
-  text-align: center;
-  color: #2c3e50;
-  font-size: 28px;
-  margin-bottom: 20px;
-  font-weight: bold;
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+    padding-left: 0;
 }
 
 ul li {
-  margin-bottom: 10px;
-  font-size: 16px;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
-ul li strong {
-  font-weight: bold;
+.card {
+    border: none;
+    margin-bottom: 20px;
 }
 
-.project {
-  margin-bottom: 20px;
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
 }
 
 footer {
-  background-color: #2c3e50;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  position: relative;
-  width: 100%;
-  bottom: 0;
+    font-size: 1rem;
 }
 
-footer p {
-  margin: 0;
-  font-size: 16px;
-}
-
-a.footer-link {
-  color: #3498db;
-  text-decoration: none;
-}
-
-a.footer-link:hover {
-  text-decoration: underline;
-}
-
-#backToTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #3498db;
-  color: white;
-  padding: 10px 15px;
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: none;
-  transition: background-color 0.3s ease;
-}
-
-#backToTopBtn:hover {
-  background-color: #2980b9;
-}
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
-  header h1 {
-    font-size: 28px;
-  }
-
-  section {
-    padding: 15px;
-    margin: 15px;
-  }
-
-  footer p {
-    font-size: 14px;
-  }
-
-  #backToTopBtn {
-    font-size: 16px;
-    padding: 8px 12px;
-  }
+footer .fab {
+    font-size: 1.5rem;
 }
