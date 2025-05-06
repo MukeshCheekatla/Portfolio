@@ -28,11 +28,11 @@ Motivated Full Stack Developer with hands-on experience in MERN stack technologi
 
 - **Master of Computer Applications (MCA)**  
   Adikavi Nannaya University, Rajahmundry  
-  *2023 – 2025 (Pursuing)*
+  *2023 – 2025* - 7.5 CGPA
 
 - **Bachelor of Computer Science (MPCS)**  
   Aditya Degree College, Amalapuram, Andhra Pradesh  
-  *2020 – 2023* - 69.9%
+  *2020 – 2023* - 69.9 CGPA
 
 - **Intermediate (MPC)**  
   Vidyanidhi Junior College, Amalapuram  
