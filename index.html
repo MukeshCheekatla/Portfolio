@@ -9,13 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
                 <a href="#">Sai Mukesh Cheekatla</a>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
             <nav>
                 <ul>
@@ -132,8 +136,7 @@
             <h2>Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-<!--                     <img src="assets/images/budgetbuddy.png" alt="BudgetBuddy Project"> -->
-                    <h3>BudgetBuddy - Expense & Budget Tracking System</h3> 
+                    <h3>BudgetBuddy - Expense & Budget Tracking System</h3>
                     <p>A full-stack web application built with the MERN stack, featuring user authentication, income and expense tracking, interactive data visualization using charts, and a responsive design.</p>
                     <div class="project-links">
                         <a href="https://personaexpensetracker.netlify.app/" target="_blank"><i class="fas fa-eye"></i> Live Demo </a>
@@ -141,8 +144,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-<!--                     <img src="assets/images/nlp_prediction.png" alt="Next Word Prediction Model">-->
-                    <h3>Next Word Prediction Model</h3> 
+                    <h3>Next Word Prediction Model</h3>
                     <p>An NLP project implemented in Python, leveraging TensorFlow and NLTK to predict the subsequent word in a given sentence. Explores sequence modeling and text generation techniques.</p>
                     <div class="project-links">
                         <a href="https://github.com/rahulcr42/Next-word-prediction" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -187,6 +189,15 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('nav ul');
+
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
+        });
+    </script>
 </body>
 </html>
