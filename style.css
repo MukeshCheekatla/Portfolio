@@ -508,3 +508,30 @@
         padding: 10px;
         display: block;
     }
+/* Additional Styles for Hamburger Menu */
+nav {
+    display: none; /* Hide navigation by default */
+}
+
+nav.active {
+    display: flex; /* Show navigation when active */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.hamburger {
+    display: none; /* Hide hamburger on large screens */
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 2em;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger button on mobile */
+    }
+}
