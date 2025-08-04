@@ -1,193 +1,317 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Mukesh Cheekatla - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base body styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a; /* slate-900 */
+        }
+
+        /* Styles for full-height sections */
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        /* Glassmorphism effect for cards */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.5); /* slate-800 with opacity */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hover effect for skill card icons */
+        .skill-card i {
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover i {
+            transform: scale(1.2);
+        }
+
+        /* Animation for elements on scroll */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="#">Sai Mukesh Cheekatla</a>
-            </div>
-            
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+<body class="bg-slate-900 text-slate-300">
+
+    <!-- Header & Navigation -->
+    <header class="bg-slate-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-slate-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl md:text-2xl font-bold text-white">S<span class="text-violet-500">M</span>C</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-violet-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-violet-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-violet-400 transition-colors">Projects</a>
+                <a href="#education" class="hover:text-violet-400 transition-colors">Education</a>
+                <a href="#contact" class="hover:text-violet-400 transition-colors">Contact</a>
             </nav>
+            <button id="mobile-menu-button" class="md:hidden text-2xl text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+            <a href="#about" class="block py-3 px-6 hover:bg-slate-700">About</a>
+            <a href="#skills" class="block py-3 px-6 hover:bg-slate-700">Skills</a>
+            <a href="#projects" class="block py-3 px-6 hover:bg-slate-700">Projects</a>
+            <a href="#education" class="block py-3 px-6 hover:bg-slate-700">Education</a>
+            <a href="#contact" class="block py-3 px-6 hover:bg-slate-700">Contact</a>
         </div>
     </header>
 
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <img src="https://i.ibb.co/gFhMckwj/Whats-App-Image-2025-04-20-at-5-16-35-PM.jpg" alt="Your Profile Picture" class="profile-image">
-                <h1>Hi, I'm Sai Mukesh Cheekatla</h1>
-                <p class="lead">Aspiring Full-Stack Developer | MERN Enthusiast | NLP Explorer</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/mukesh-cheekatla-411814257/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/rahulcr42" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:cheekatlamukesh@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>Hello! I'm an MCA student passionate about building impactful web applications. With a strong foundation in full-stack development using the MERN stack, I love turning ideas into clean, functional, and user-friendly solutions.</p>
-                <p>I'm also exploring Natural Language Processing and enjoy solving problems through code. Whether it's collaborating on a team project or learning something new, I’m always up for a challenge and eager to grow as a developer.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="education-content">
-                <div class="education-block">
-                    <h3>Master of Computer Applications (MCA)</h3>
-                    <p class="institution">Adikavi Nannaya University, Rajahmundry</p>
-                    <p class="year">2023 – 2025</p>
-                    <p class="cgpa">C.G.P.A: 7.5</p>
-                </div>
-                <div class="education-block">
-                    <h3>Bachelor of Computer Science (MPCS)</h3>
-                    <p class="institution">Aditya Degree College, Amalapuram, AP</p>
-                    <p class="university">Adikavi Nannaya University</p>
-                    <p class="year">2020 – 2023</p>
-                    <p class="cgpa">C.G.P.A: 69.9</p>
-                </div>
-                <div class="education-block">
-                    <h3>Intermediate (12th Grade)</h3>
-                    <p class="institution">Vidyanadhi Junior College, Amalapuram</p>
-                    <p class="board">Board of Intermediate Education, A.P.</p>
-                    <p class="year">2018 – 2020</p>
-                    <p class="cgpa">C.G.P.A: 7.15</p>
-                </div>
-                <div class="education-block">
-                    <h3>SSC (10th Grade)</h3>
-                    <p class="institution">Mahatma Gandhi Municipal High School (E.M), Amalapuram</p>
-                    <p class="board">SSC Board</p>
-                    <p class="year">2018</p>
-                    <p class="cgpa">C.G.P.A: 9.8</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <ul>
-                        <li><i class="fab fa-html5"></i> HTML</li>
-                        <li><i class="fab fa-css3-alt"></i> CSS</li>
-                        <li><i class="fab fa-js-square"></i> JavaScript</li>
-                        <li><i class="fab fa-python"></i> Python</li>
-                        <li><i class="fab fa-java"></i> Java</li>
-                        <li><i class="fas fa-database"></i> SQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Frameworks & Libraries</h3>
-                    <ul>
-                        <li><i class="fab fa-react"></i> React.js</li>
-                        <li><i class="fab fa-node-js"></i> Node.js</li>
-                        <li>Express.js</li>
-                        <li>MongoDB</li>
-                        <li>MySQL</li>
-                        <li><i class="fab fa-git-alt"></i> Git</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Technologies</h3>
-                    <ul>
-                        <li>VS Code</li>
-                        <li>Jupyter Notebook</li>
-                        <li>NLP (TensorFlow, NLTK)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-<!--                     <img src="assets/images/budgetbuddy.png" alt="BudgetBuddy Project"> -->
-                    <h3>BudgetBuddy - Expense & Budget Tracking System</h3> 
-                    <p>A full-stack web application built with the MERN stack, featuring user authentication, income and expense tracking, interactive data visualization using charts, and a responsive design.</p>
-                    <div class="project-links">
-                        <a href="https://personaexpensetracker.netlify.app/" target="_blank"><i class="fas fa-eye"></i> Live Demo </a>
-                        <a href="https://github.com/rahulcr42/Expense-Tracker" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <div class="container mx-auto px-6 text-center">
+                <div class="scroll-animate">
+                    <img src="https://placehold.co/150x150/1e293b/94a3b8?text=SMC" alt="Sai Mukesh Cheekatla" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-violet-500 shadow-2xl shadow-violet-500/20">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-3">Sai Mukesh Cheekatla</h1>
+                    <p class="text-lg md:text-xl text-slate-400 mb-8">Full Stack Developer | MCA Graduate | MERN & Java Enthusiast</p>
+                    <div class="flex justify-center space-x-6 text-2xl mb-8">
+                        <a href="https://github.com/MukeshCheekatla" target="_blank" class="text-slate-400 hover:text-violet-400 transition-all duration-300 hover:scale-110"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/mukesh-cheekatla-411814257/" target="_blank" class="text-slate-400 hover:text-violet-400 transition-all duration-300 hover:scale-110"><i class="fab fa-linkedin"></i></a>
                     </div>
+                    <a href="#projects" class="bg-violet-600 hover:bg-violet-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg shadow-violet-500/30 transform hover:scale-105">View My Work</a>
                 </div>
-                <div class="project-card">
-<!--                     <img src="assets/images/nlp_prediction.png" alt="Next Word Prediction Model">-->
-                    <h3>Next Word Prediction Model</h3> 
-                    <p>An NLP project implemented in Python, leveraging TensorFlow and NLTK to predict the subsequent word in a given sentence. Explores sequence modeling and text generation techniques.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/rahulcr42/Next-word-prediction" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section bg-slate-800/50">
+            <div class="container mx-auto px-6 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">About <span class="text-violet-500">Me</span></h2>
+                <div class="max-w-4xl mx-auto text-center text-slate-400 text-lg leading-relaxed">
+                    <p>
+                        A Full Stack Developer with hands-on experience building dynamic web apps using the MERN stack. Proficient in creating responsive user interfaces, REST APIs, and integrating data visualizations. Currently expanding my backend skills with Java & Spring Boot to enhance versatility. I'm eager to contribute to real-world applications that create business value and solve complex problems.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+             <div class="container mx-auto px-6 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Technical <span class="text-violet-500">Skills</span></h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
+                    <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fab fa-react text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">React.js</p>
+                    </div>
+                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fab fa-js-square text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">JavaScript</p>
+                    </div>
+                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fab fa-node-js text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">Node.js</p>
+                    </div>
+                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-database text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">MongoDB</p>
+                    </div>
+                    <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fab fa-java text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">Java</p>
+                    </div>
+                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-leaf text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">Spring Boot</p>
+                    </div>
+                    <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fab fa-html5 text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">HTML5</p>
+                    </div>
+                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fab fa-css3-alt text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">CSS3</p>
+                    </div>
+                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-database text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">MySQL</p>
+                    </div>
+                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fab fa-git-alt text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">Git</p>
+                    </div>
+                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-code-branch text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">REST API</p>
+                    </div>
+                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-terminal text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">Postman</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>I'm open to new opportunities and collaborations. Feel free to reach out!</p>
-            <div class="contact-form">
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+        <!-- Projects Section -->
+        <section id="projects" class="section bg-slate-800/50">
+            <div class="container mx-auto px-6 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Featured <span class="text-violet-500">Projects</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Project 1 -->
+                    <div class="glass-card rounded-lg overflow-hidden group flex flex-col">
+                        <img src="https://placehold.co/800x450/1e293b/8b5cf6?text=Expense+Tracker" alt="Expense Tracker Project" class="w-full h-48 object-cover">
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2 text-white">Expense & Budget Tracking System</h3>
+                            <p class="text-slate-400 mb-4 flex-grow">A MERN-based web app for tracking income, expenses, and savings. Features user authentication, category-wise filtering, and data visualization using Chart.js.</p>
+                            <a href="https://github.com/MukeshCheekatla/expense-tracker" target="_blank" class="font-semibold text-violet-400 hover:text-violet-300 transition-colors self-start">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                    <!-- Project 2 -->
+                    <div class="glass-card rounded-lg overflow-hidden group flex flex-col">
+                        <img src="https://placehold.co/800x450/1e293b/8b5cf6?text=Portfolio" alt="Portfolio Project" class="w-full h-48 object-cover">
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold mb-2 text-white">Personal Portfolio Website</h3>
+                            <p class="text-slate-400 mb-4 flex-grow">The responsive portfolio website you are currently viewing. Designed to showcase my skills and projects, built with HTML, Tailwind CSS, and JavaScript.</p>
+                            <a href="https://github.com/MukeshCheekatla" target="_blank" class="font-semibold text-violet-400 hover:text-violet-300 transition-colors self-start">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="button primary">Send Message</button>
-                </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Sai Mukesh Cheekatla. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/mukesh-cheekatla-411814257/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/rahulcr42" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:cheekatlamukesh@gmail.com"><i class="fas fa-envelope"></i></a>
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="container mx-auto px-6 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white">Education & <span class="text-violet-500">Certifications</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                    <!-- Education -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <i class="fas fa-graduation-cap text-3xl text-violet-500"></i>
+                            <h3 class="text-2xl font-semibold text-white">Education</h3>
+                        </div>
+                        <div class="space-y-6 border-l-2 border-slate-700 pl-6">
+                            <div class="relative">
+                                <div class="absolute -left-[34px] top-1 w-4 h-4 bg-violet-500 rounded-full border-4 border-slate-900"></div>
+                                <p class="text-sm text-slate-400">2023 - 2025</p>
+                                <h4 class="font-bold text-white text-lg">Master of Computer Applications</h4>
+                                <p class="text-sm font-medium text-slate-400">Adikavi Nannaya University | CGPA: 7.65</p>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-[34px] top-1 w-4 h-4 bg-violet-500 rounded-full border-4 border-slate-900"></div>
+                                <p class="text-sm text-slate-400">2020 - 2023</p>
+                                <h4 class="font-bold text-white text-lg">B.Sc. Computer Science</h4>
+                                <p class="text-sm font-medium text-slate-400">Aditya Degree College | CGPA: 6.99</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Certifications -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <i class="fas fa-certificate text-3xl text-violet-500"></i>
+                            <h3 class="text-2xl font-semibold text-white">Certifications</h3>
+                        </div>
+                         <div class="space-y-4">
+                            <div class="bg-slate-800/80 p-4 rounded-lg">
+                                <p class="font-semibold text-white">JavaScript Programming</p>
+                                <p class="text-sm text-violet-400">OpenWeaver</p>
+                            </div>
+                            <div class="bg-slate-800/80 p-4 rounded-lg">
+                                <p class="font-semibold text-white">Communication for Professional Success</p>
+                                <p class="text-sm text-violet-400">Coursera</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section bg-slate-800/50">
+            <div class="container mx-auto px-6 text-center scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get In <span class="text-violet-500">Touch</span></h2>
+                <p class="text-slate-400 mb-8 max-w-xl mx-auto">I'm actively seeking new opportunities. Whether you have a question or just want to say hi, my inbox is always open!</p>
+                <div class="max-w-xl mx-auto">
+                    <form action="https://formspree.io/f/your_form_id" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" name="name" placeholder="Your Name" required class="w-full bg-slate-800 border-slate-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-violet-500">
+                            <input type="email" name="email" placeholder="Your Email" required class="w-full bg-slate-800 border-slate-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-violet-500">
+                        </div>
+                        <div>
+                            <textarea name="message" rows="5" placeholder="Your Message" required class="w-full bg-slate-800 border-slate-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-violet-500"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-violet-600 hover:bg-violet-700 text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300 shadow-lg shadow-violet-500/30">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-8 border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center text-slate-500">
+            <p>&copy; 2024 Sai Mukesh Cheekatla. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // --- Mobile Menu Toggle ---
+        // Get the button and the menu elements from the DOM
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        // Get all the navigation links (for both desktop and mobile)
+        const navLinks = document.querySelectorAll('#mobile-menu a, nav a');
+
+        // Add a click event listener to the menu button
+        mobileMenuButton.addEventListener('click', () => {
+            // Toggle the 'hidden' class to show or hide the mobile menu
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Add click event listeners to all navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // If the mobile menu is open, hide it when a link is clicked
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // --- Scroll Animation ---
+        // Get all elements that have the 'scroll-animate' class
+        const animatedElements = document.querySelectorAll('.scroll-animate');
+
+        // Create a new Intersection Observer
+        // This will watch for when elements enter the viewport
+        const observer = new IntersectionObserver((entries) => {
+            // Loop over each entry (each element being observed)
+            entries.forEach(entry => {
+                // If the element is intersecting (visible on screen)
+                if (entry.isIntersecting) {
+                    // Add the 'is-visible' class to trigger the animation
+                    entry.target.classList.add('is-visible');
+                    // Stop observing the element once it's visible to prevent re-animation
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            // The animation will trigger when 10% of the element is visible
+            threshold: 0.1
+        });
+
+        // Loop over each animated element and start observing it
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
 </body>
 </html>
