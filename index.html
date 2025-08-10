@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Sai Mukesh Cheekatla - Full Stack Developer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    
+    <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS for enhancements -->
     <style>
         /* Base body styles */
         body {
@@ -14,43 +23,58 @@
             background-color: #0f172a; /* slate-900 */
         }
 
-        /* Styles for full-height sections */
+        /* Styles for section padding */
         .section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             padding-top: 6rem;
             padding-bottom: 6rem;
         }
 
         /* Glassmorphism effect for cards */
         .glass-card {
-            background: rgba(30, 41, 59, 0.5); /* slate-800 with opacity */
-            backdrop-filter: blur(10px);
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         /* Hover effect for skill card icons */
         .skill-card i {
             transition: transform 0.3s ease;
         }
-
         .skill-card:hover i {
-            transform: scale(1.2);
+            transform: scale(1.1);
+        }
+
+        /* Gradient text for headings */
+        .gradient-text {
+            background: linear-gradient(to right, #a78bfa, #c4b5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         /* Animation for elements on scroll */
         .scroll-animate {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-
         .scroll-animate.is-visible {
             opacity: 1;
             transform: translateY(0);
+        }
+        
+        /* Pulse animation for CV button */
+        .pulse-animate {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
         }
     </style>
 </head>
@@ -83,17 +107,22 @@
 
     <main>
         <!-- Home Section -->
-        <section id="home" class="section">
+        <section id="home" class="section flex items-center min-h-screen pt-16">
             <div class="container mx-auto px-6 text-center">
                 <div class="scroll-animate">
-                    <img src="https://freeimage.host/i/FQHz7SI" alt="Sai Mukesh Cheekatla" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-violet-500 shadow-2xl shadow-violet-500/20">
+                    <img src="https://iili.io/FQHz7SI.md.jpg" alt="Sai Mukesh Cheekatla" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-violet-500 shadow-2xl shadow-violet-500/20 object-cover">
                     <h1 class="text-4xl md:text-6xl font-bold text-white mb-3">Sai Mukesh Cheekatla</h1>
                     <p class="text-lg md:text-xl text-slate-400 mb-8">Full Stack Developer | MCA Graduate | MERN & Java Enthusiast</p>
                     <div class="flex justify-center space-x-6 text-2xl mb-8">
-                        <a href="https://github.com/MukeshCheekatla" target="_blank" class="text-slate-400 hover:text-violet-400 transition-all duration-300 hover:scale-110"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/mukesh-cheekatla-411814257/" target="_blank" class="text-slate-400 hover:text-violet-400 transition-all duration-300 hover:scale-110"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/MukeshCheekatla" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-violet-400 transition-all duration-300 hover:scale-110"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/mukesh-cheekatla-411814257/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-violet-400 transition-all duration-300 hover:scale-110"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:cheekatlamukesh@gmail.com" class="text-slate-400 hover:text-violet-400 transition-all duration-300 hover:scale-110"><i class="fas fa-envelope"></i></a>
                     </div>
-                    <a href="#projects" class="bg-violet-600 hover:bg-violet-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg shadow-violet-500/30 transform hover:scale-105">View My Work</a>
+                    <div class="flex justify-center gap-4 flex-wrap">
+                        <a href="#projects" class="bg-violet-600 hover:bg-violet-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg shadow-violet-500/30 transform hover:scale-105">View My Work</a>
+                        <!-- Add a link to your CV/Resume PDF here -->
+                        <a href="#" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 pulse-animate">Download CV</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -101,10 +130,10 @@
         <!-- About Section -->
         <section id="about" class="section bg-slate-800/50">
             <div class="container mx-auto px-6 scroll-animate">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">About <span class="text-violet-500">Me</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">About <span class="gradient-text">Me</span></h2>
                 <div class="max-w-4xl mx-auto text-center text-slate-400 text-lg leading-relaxed">
                     <p>
-                        A Full Stack Developer with hands-on experience building dynamic web apps using the MERN stack. Proficient in creating responsive user interfaces, REST APIs, and integrating data visualizations. Currently expanding my backend skills with Java & Spring Boot to enhance versatility. I'm eager to contribute to real-world applications that create business value and solve complex problems.
+                        I'm a developer who loves building things for the web. For me, it's like solving a puzzle—I enjoy digging into new technologies and turning complex problems into beautiful, functional applications. From crafting responsive front-end experiences to building robust backend APIs with the MERN stack, I'm passionate about the entire development process. Now, I'm diving into Java and Spring Boot to build even more powerful solutions. I'm excited to bring my skills and enthusiasm to a project that makes a real impact.
                     </p>
                 </div>
             </div>
@@ -113,43 +142,24 @@
         <!-- Skills Section -->
         <section id="skills" class="section">
              <div class="container mx-auto px-6 scroll-animate">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Technical <span class="text-violet-500">Skills</span></h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
-                    <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
-                        <i class="fab fa-react text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">React.js</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white">Technical <span class="gradient-text">Skills</span></h2>
+                <div class="max-w-6xl mx-auto">
+                    <!-- Frontend -->
+                    <h3 class="text-xl font-semibold text-violet-400 mb-6 text-center">Frontend</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12">
+                        <div class="skill-card text-center p-4 bg-slate-800 rounded-lg"><i class="fab fa-react text-4xl text-violet-400 mb-2"></i><p class="font-semibold text-white">React.js</p></div>
+                        <div class="skill-card text-center p-4 bg-slate-800 rounded-lg"><i class="fab fa-js-square text-4xl text-violet-400 mb-2"></i><p class="font-semibold text-white">JavaScript</p></div>
+                        <div class="skill-card text-center p-4 bg-slate-800 rounded-lg"><i class="fab fa-html5 text-4xl text-violet-400 mb-2"></i><p class="font-semibold text-white">HTML5</p></div>
+                        <div class="skill-card text-center p-4 bg-slate-800 rounded-lg"><i class="fab fa-css3-alt text-4xl text-violet-400 mb-2"></i><p class="font-semibold text-white">CSS3</p></div>
+                        <div class="skill-card text-center p-4 bg-slate-800 rounded-lg"><i class="fas fa-wind text-4xl text-violet-400 mb-2"></i><p class="font-semibold text-white">Tailwind CSS</p></div>
                     </div>
-                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
-                        <i class="fab fa-js-square text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">JavaScript</p>
-                    </div>
-                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
-                        <i class="fab fa-node-js text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">Node.js</p>
-                    </div>
-                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
-                        <i class="fas fa-database text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">MongoDB</p>
-                    </div>
-                    <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
-                        <i class="fab fa-java text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">Java</p>
-                    </div>
-                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
-                        <i class="fas fa-leaf text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">Spring Boot</p>
-                    </div>
-                    <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
-                        <i class="fab fa-html5 text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">HTML5</p>
-                    </div>
-                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
-                        <i class="fab fa-css3-alt text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">CSS3</p>
-                    </div>
-                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
-                        <i class="fas fa-database text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">MySQL</p>
-                    </div>
-                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
-                        <i class="fab fa-git-alt text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">Git</p>
-                    </div>
-                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
-                        <i class="fas fa-code-branch text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">REST API</p>
-                    </div>
-                     <div class="skill-card text-center p-6 bg-slate-800 rounded-lg hover:bg-slate-700/80 transition-all duration-300 transform hover:-translate-y-2">
-                        <i class="fas fa-terminal text-5xl text-violet-400 mb-3"></i><p class="font-semibold text-white">Postman</p>
+                    <!-- Backend -->
+                    <h3 class="text-xl font-semibold text-violet-400 mb-6 text-center">Backend</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12">
+                        <div class="skill-card text-center p-4 bg-slate-800 rounded-lg"><i class="fab fa-node-js text-4xl text-violet-400 mb-2"></i><p class="font-semibold text-white">Node.js</p></div>
+                        <div class="skill-card text-center p-4 bg-slate-800 rounded-lg"><i class="fas fa-server text-4xl text-violet-400 mb-2"></i><p class="font-semibold text-white">Express.js</p></div>
+                        <div class="skill-card text-center p-4 bg-slate-800 rounded-lg"><i class="fab fa-java text-4xl text-violet-400 mb-2"></i><p class="font-semibold text-white">Java</p></div>
+                        <div class="skill-card text-center p-4 bg-slate-800 rounded-lg"><i class="fas fa-leaf text-4xl text-violet-400 mb-2"></i><p class="font-semibold text-white">Spring Boot</p></div>
                     </div>
                 </div>
             </div>
@@ -158,24 +168,24 @@
         <!-- Projects Section -->
         <section id="projects" class="section bg-slate-800/50">
             <div class="container mx-auto px-6 scroll-animate">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Featured <span class="text-violet-500">Projects</span></h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Featured <span class="gradient-text">Projects</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     <!-- Project 1 -->
                     <div class="glass-card rounded-lg overflow-hidden group flex flex-col">
-                        <img src="https://placehold.co/800x450/1e293b/8b5cf6?text=Expense+Tracker" alt="Expense Tracker Project" class="w-full h-48 object-cover">
+                        <img src="https://placehold.co/800x450/1e293b/8b5cf6?text=Expense+Tracker" alt="Expense Tracker Project" class="w-full h-56 object-cover">
                         <div class="p-8 flex flex-col flex-grow">
                             <h3 class="text-xl font-bold mb-2 text-white">Expense & Budget Tracking System</h3>
-                            <p class="text-slate-400 mb-4 flex-grow">A MERN-based web app for tracking income, expenses, and savings. Features user authentication, category-wise filtering, and data visualization using Chart.js.</p>
-                            <a href="https://github.com/MukeshCheekatla/expense-tracker" target="_blank" class="font-semibold text-violet-400 hover:text-violet-300 transition-colors self-start">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+                            <p class="text-slate-400 mb-4 flex-grow">A full-stack MERN application to manage personal finances. Features secure user authentication, category-wise filtering, and data visualization with Chart.js.</p>
+                            <a href="https://github.com/MukeshCheekatla/expense-tracker" target="_blank" rel="noopener noreferrer" class="font-semibold text-violet-400 hover:text-violet-300 transition-colors self-start">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
                     <!-- Project 2 -->
                     <div class="glass-card rounded-lg overflow-hidden group flex flex-col">
-                        <img src="https://placehold.co/800x450/1e293b/8b5cf6?text=Portfolio" alt="Portfolio Project" class="w-full h-48 object-cover">
+                        <img src="https://placehold.co/800x450/1e293b/8b5cf6?text=Portfolio" alt="Portfolio Project" class="w-full h-56 object-cover">
                         <div class="p-8 flex flex-col flex-grow">
                             <h3 class="text-xl font-bold mb-2 text-white">Personal Portfolio Website</h3>
-                            <p class="text-slate-400 mb-4 flex-grow">The responsive portfolio website you are currently viewing. Designed to showcase my skills and projects, built with HTML, Tailwind CSS, and JavaScript.</p>
-                            <a href="https://github.com/MukeshCheekatla" target="_blank" class="font-semibold text-violet-400 hover:text-violet-300 transition-colors self-start">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
+                            <p class="text-slate-400 mb-4 flex-grow">A responsive personal portfolio (the site you're on now) built with HTML, Tailwind CSS, and JavaScript to showcase my skills and projects.</p>
+                            <a href="https://github.com/MukeshCheekatla" target="_blank" rel="noopener noreferrer" class="font-semibold text-violet-400 hover:text-violet-300 transition-colors self-start">View on GitHub <i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -185,44 +195,32 @@
         <!-- Education Section -->
         <section id="education" class="section">
             <div class="container mx-auto px-6 scroll-animate">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white">Education & <span class="text-violet-500">Certifications</span></h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                    <!-- Education -->
-                    <div>
-                        <div class="flex items-center gap-4 mb-6">
-                            <i class="fas fa-graduation-cap text-3xl text-violet-500"></i>
-                            <h3 class="text-2xl font-semibold text-white">Education</h3>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white">My <span class="gradient-text">Journey</span></h2>
+                <div class="max-w-2xl mx-auto">
+                    <div class="space-y-8 border-l-2 border-slate-700 pl-8">
+                        <div class="relative">
+                            <div class="absolute -left-[42px] top-1 w-4 h-4 bg-violet-500 rounded-full border-4 border-slate-900"></div>
+                            <p class="text-sm text-slate-400">2023 - 2025</p>
+                            <h4 class="font-bold text-white text-lg">Master of Computer Applications (MCA)</h4>
+                            <p class="text-sm font-medium text-slate-400">Adikavi Nannaya University, Rajahmundry | 7.5 CGPA</p>
                         </div>
-                        <div class="space-y-6 border-l-2 border-slate-700 pl-6">
-                            <div class="relative">
-                                <div class="absolute -left-[34px] top-1 w-4 h-4 bg-violet-500 rounded-full border-4 border-slate-900"></div>
-                                <p class="text-sm text-slate-400">2023 - 2025</p>
-                                <h4 class="font-bold text-white text-lg">Master of Computer Applications</h4>
-                                <p class="text-sm font-medium text-slate-400">Adikavi Nannaya University | CGPA: 7.65</p>
-                            </div>
-                            <div class="relative">
-                                <div class="absolute -left-[34px] top-1 w-4 h-4 bg-violet-500 rounded-full border-4 border-slate-900"></div>
-                                <p class="text-sm text-slate-400">2020 - 2023</p>
-                                <h4 class="font-bold text-white text-lg">B.Sc. Computer Science</h4>
-                                <p class="text-sm font-medium text-slate-400">Aditya Degree College | CGPA: 6.99</p>
-                            </div>
+                        <div class="relative">
+                            <div class="absolute -left-[42px] top-1 w-4 h-4 bg-violet-500 rounded-full border-4 border-slate-900"></div>
+                            <p class="text-sm text-slate-400">2020 - 2023</p>
+                            <h4 class="font-bold text-white text-lg">Bachelor of Science in Computer Science (MPCS)</h4>
+                            <p class="text-sm font-medium text-slate-400">Aditya Degree College, Amalapuram | 7.0 CGPA</p>
                         </div>
-                    </div>
-                    <!-- Certifications -->
-                    <div>
-                        <div class="flex items-center gap-4 mb-6">
-                            <i class="fas fa-certificate text-3xl text-violet-500"></i>
-                            <h3 class="text-2xl font-semibold text-white">Certifications</h3>
+                         <div class="relative">
+                            <div class="absolute -left-[42px] top-1 w-4 h-4 bg-violet-500 rounded-full border-4 border-slate-900"></div>
+                            <p class="text-sm text-slate-400">2018 - 2020</p>
+                            <h4 class="font-bold text-white text-lg">Intermediate (MPC)</h4>
+                            <p class="text-sm font-medium text-slate-400">Vidyanidhi Junior College, Amalapuram | 7.2 CGPA</p>
                         </div>
-                         <div class="space-y-4">
-                            <div class="bg-slate-800/80 p-4 rounded-lg">
-                                <p class="font-semibold text-white">JavaScript Programming</p>
-                                <p class="text-sm text-violet-400">OpenWeaver</p>
-                            </div>
-                            <div class="bg-slate-800/80 p-4 rounded-lg">
-                                <p class="font-semibold text-white">Communication for Professional Success</p>
-                                <p class="text-sm text-violet-400">Coursera</p>
-                            </div>
+                         <div class="relative">
+                            <div class="absolute -left-[42px] top-1 w-4 h-4 bg-violet-500 rounded-full border-4 border-slate-900"></div>
+                            <p class="text-sm text-slate-400">2018</p>
+                            <h4 class="font-bold text-white text-lg">Secondary School Certificate (SSC)</h4>
+                            <p class="text-sm font-medium text-slate-400">Mahatma Gandhi Municipal High School, Amalapuram | 9.8 CGPA</p>
                         </div>
                     </div>
                 </div>
@@ -232,13 +230,13 @@
         <!-- Contact Section -->
         <section id="contact" class="section bg-slate-800/50">
             <div class="container mx-auto px-6 text-center scroll-animate">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get In <span class="text-violet-500">Touch</span></h2>
-                <p class="text-slate-400 mb-8 max-w-xl mx-auto">I'm actively seeking new opportunities. Whether you have a question or just want to say hi, my inbox is always open!</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="text-slate-400 mb-8 max-w-xl mx-auto">I'm actively seeking new opportunities. Whether you have a question, a project idea, or just want to say hi, my inbox is always open!</p>
                 <div class="max-w-xl mx-auto">
                     <form action="https://formspree.io/f/your_form_id" method="POST" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" name="name" placeholder="Your Name" required class="w-full bg-slate-800 border-slate-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-violet-500">
-                            <input type="email" name="email" placeholder="Your Email" required class="w-full bg-slate-800 border-slate-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-violet-500">
+                            <input type="text" name="name" placeholder="Your Name" required autocomplete="name" class="w-full bg-slate-800 border-slate-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-violet-500">
+                            <input type="email" name="email" placeholder="Your Email" required autocomplete="email" class="w-full bg-slate-800 border-slate-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-violet-500">
                         </div>
                         <div>
                             <textarea name="message" rows="5" placeholder="Your Message" required class="w-full bg-slate-800 border-slate-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-violet-500"></textarea>
@@ -257,59 +255,56 @@
     <!-- Footer -->
     <footer class="bg-slate-900 py-8 border-t border-slate-800">
         <div class="container mx-auto px-6 text-center text-slate-500">
+             <div class="flex justify-center space-x-6 text-xl mb-4">
+                <a href="https://github.com/MukeshCheekatla" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-violet-400 transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mukesh-cheekatla-411814257/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-violet-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:cheekatlamukesh@gmail.com" class="text-slate-500 hover:text-violet-400 transition-colors"><i class="fas fa-envelope"></i></a>
+            </div>
             <p>&copy; 2024 Sai Mukesh Cheekatla. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
         // --- Mobile Menu Toggle ---
-        // Get the button and the menu elements from the DOM
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        // Get all the navigation links (for both desktop and mobile)
-        const navLinks = document.querySelectorAll('#mobile-menu a, nav a');
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('#mobile-menu a, header nav a');
 
-        // Add a click event listener to the menu button
-        mobileMenuButton.addEventListener('click', () => {
-            // Toggle the 'hidden' class to show or hide the mobile menu
-            mobileMenu.classList.toggle('hidden');
-        });
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
 
-        // Add click event listeners to all navigation links
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // If the mobile menu is open, hide it when a link is clicked
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
             });
         });
 
         // --- Scroll Animation ---
-        // Get all elements that have the 'scroll-animate' class
-        const animatedElements = document.querySelectorAll('.scroll-animate');
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.scroll-animate');
+            if (!animatedElements.length) return;
 
-        // Create a new Intersection Observer
-        // This will watch for when elements enter the viewport
-        const observer = new IntersectionObserver((entries) => {
-            // Loop over each entry (each element being observed)
-            entries.forEach(entry => {
-                // If the element is intersecting (visible on screen)
-                if (entry.isIntersecting) {
-                    // Add the 'is-visible' class to trigger the animation
-                    entry.target.classList.add('is-visible');
-                    // Stop observing the element once it's visible to prevent re-animation
-                    observer.unobserve(entry.target);
-                }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
             });
-        }, {
-            // The animation will trigger when 10% of the element is visible
-            threshold: 0.1
-        });
 
-        // Loop over each animated element and start observing it
-        animatedElements.forEach(element => {
-            observer.observe(element);
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
         });
     </script>
 
